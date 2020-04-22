@@ -1,10 +1,12 @@
 import com.google.common.collect.ImmutableList;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.json.Json;
 import javax.json.JsonBuilderFactory;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import java.util.List;
+
 
 
 // MSG,3,1,1,68BD6E,1,2020/04/20,09:11:27.498,2020/04/20,09:11:27.540,,21325,,,,,,,0,,0,
@@ -43,7 +45,7 @@ public class MsgType {
                     int idx = fld.getIndex();
                     if (idx < fields.size()) {
                         String value = fields.get(idx);
-                        if (!value.isBlank()) {
+                        if (!StringUtils.isBlank(value)) {
                             String name = fld.getName();
                             builder.add(name, value);
                         }
