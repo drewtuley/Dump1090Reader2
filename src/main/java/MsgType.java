@@ -1,5 +1,4 @@
 import com.google.common.collect.ImmutableList;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.json.Json;
 import javax.json.JsonBuilderFactory;
@@ -45,7 +44,7 @@ public class MsgType {
                     int idx = fld.getIndex();
                     if (idx < fields.size()) {
                         String value = fields.get(idx);
-                        if (!StringUtils.isBlank(value)) {
+                        if (!value.isBlank()) {
                             String name = fld.getName();
                             builder.add(name, value);
                         }
